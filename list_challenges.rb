@@ -2,11 +2,11 @@ def threed(list)
     three_count = 0
     i = 0
     while i < list.size
-        if i == 3 && i + 1 == 3
+        if list[i] == 3 && list[i] + 1 == 3
             return false
         else
-            if i == 3 
-                count_three += 1
+            if list[i] == 3 
+                three_count += 1
             end
         end
         i = i + 1
@@ -14,8 +14,9 @@ def threed(list)
 
     if three_count == 3
         return true
+    else
+        return false
     end
-    if three_count !== 3
     puts three_count
 end
 
