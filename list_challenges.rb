@@ -125,7 +125,42 @@ puts threed([1,3,3,4,1,3]) # false
 # puts either_2_4([1,2,3]) # false
 # puts either_2_4([1,2,2,3,4,4]) # false
 
-def max_span(list)
+# def can_balance(list)
+#     sum1 = 0
+#     sum2 = 0
+#     list.size.times do |i|
+#         num = i
+#         while i > 0
+#             sum1 = i + (i - 1)
+#             i = i - 1
+#         end
+#         while i < list.size
+#             sum2 = num + (i + 1)
+#             i = i + 1
+#         end
+#     end
+#     if sum1 == sum2
+#         return true
+#     else
+#         return false
+#     end
+# end
+
+# puts can_balance([1,2,3,6]) # true
+
+def merged(list1, list2)
+    total = list1.size + list2.size
+    merged = [list1 + list2]
+    fihish = []
+    merged.each do |i|
+        if i < (i + 1)
+            finish.push(i)
+        elsif i == (i+1) 
+            finish.push(i, i+1)
+            i += 1 #is this how I skip the next interval?
+        end
+    end
+    print finish        
 end
 
-puts 
+puts merged([1,2,3,4,6],[2,3,5,7,8]) # [1,2,2,3,3,4,5,6,7,8]
